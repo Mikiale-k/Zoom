@@ -1,6 +1,6 @@
 "use client";
 
-import { sidebarLinks } from "./constant";
+import { sidebarLinks } from "../constant";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -14,7 +14,7 @@ const Sidebar = () => {
       <div className="flex flex-1 flex-col gap-6">
         {sidebarLinks.map((link) => {
           const isActive =
-            pathname === link.route || pathname.startsWith(link.route);
+            pathname === link.route || pathname.startsWith(`${link.route}/`);
           return (
             <Link
               href={link.route}
