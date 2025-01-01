@@ -11,8 +11,12 @@ import Alert from "@/components/Alert";
 import MeetingSetup from "@/components/MeetingSetup";
 import MeetingRoom from "@/components/MeetingRoom";
 
+type RouteParams = {
+  id: string;
+};
+
 const MeetingPage = () => {
-  const { id } = useParams();
+  const { id } = useParams() as RouteParams;
   const { isLoaded, user } = useUser();
   const { call, isCallLoading } = useGetCallById(id);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
